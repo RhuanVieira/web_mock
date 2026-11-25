@@ -111,7 +111,7 @@
 
     function renderCycles(list){
       if(!list.length){$('#cycles').innerHTML='<div class="empty">Nenhum ciclo no mock. Crie um ciclo para sincronizá-lo com o app.</div>';return}
-      $('#cycles').innerHTML=list.map(c=>`<div class="item"><div><strong>${esc(c.foodName)}</strong><div class="muted">${esc(c.status)} · ${esc(c.initialWeight??'—')} kg · ${esc(c.targetTemperature??'—')} °C · ${Math.round((c.plannedDurationSeconds??c.durationSeconds??0)/60)} min</div></div><div class="actions"><span class="pill">${esc(c.id)}</span><button class="secondary" type="button" data-edit-cycle>Editar</button></div></div>`).join('');
+      $('#cycles').innerHTML=list.map(c=>`<div class="item"><div><strong>${esc(c.foodName)}</strong><div class="muted">${esc(c.status)} · ${esc(c.initialWeight??'—')} kg · ${esc(c.targetTemperature??'—')} °C · ${Math.round((c.plannedDurationSeconds??c.durationSeconds??0)/60)} min</div></div><div class="actions"><span class="pill">${esc(c.id)}</span><button class="secondary" type="button" data-edit-cycle>Editar</button><button class="danger" type="button" data-delete-cycle aria-label="Excluir processo">Excluir</button></div></div>`).join('');
     }
 
     function renderAlerts(list){
@@ -121,7 +121,23 @@
 
     $('#device').addEventListener('change',()=>{});
     $('#refresh').addEventListener('click',refresh);
-    $('#cycles').addEventListener('click',event=>{if(event.target.closest('[data-edit-cycle]'))beginEditCycle()});
+$('#cycles').addEventListener('click',async event=>{
+      if(event.target.closest('[data-edit-cycle]')){beginEditCycle();return}
+      if(!event.target.closest('[data-delete-cycle]'))return;
+      const cycle=mockSnapshot?.cycle;
+      if(!cycle||!window.confirm(`Excluir o processo de ${cycle.foodName||'secagem'}? Esta ação não pode ser desfeita.`))return;
+      try{
+        await saveQueue;
+        await request('/mock/cycle/'+encodeURIComponent(cycle.id),'DELETE');
+        if(editingCycleId===String(cycle.id))setCreateMode();
+        await refresh();
+        $('#connection').textContent='Processo excluído';
+        $('#connection').className='status ok';
+      }catch(error){
+        $('#connection').textContent='Erro: '+error.message;
+        $('#connection').className='status err';
+      }
+    });
     $('#cancelEdit').addEventListener('click',setCreateMode);
     function patchForField(field,value){
       if(field==='foodName')return {foodName:String(value).trim()};
