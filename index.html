@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DryTech · Painel de dados</title>
   <style>
-    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#242424;background:#f5f6f8;font-synthesis:none}*{box-sizing:border-box}body{margin:0}.top{background:#fff;border-bottom:1px solid #e8e9ec;padding:18px max(22px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:18px;font-weight:850;letter-spacing:-.5px}.brand b{color:#ff650a}.top small{display:block;color:#7b7f87;font-size:12px;margin-top:3px}.wrap{max-width:1120px;margin:30px auto;padding:0 22px}.row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.title{font-size:26px;margin:0 0 5px;letter-spacing:-.8px}.sub{color:#767b84;margin:0;font-size:13px}.controls{display:flex;gap:9px;align-items:center}select,input,button{font:inherit}select,input{background:#fff;border:1px solid #dfe1e5;border-radius:10px;padding:10px 12px;color:#242424}button{border:0;border-radius:10px;padding:10px 14px;background:#ff650a;color:#fff;font-weight:750;cursor:pointer}button.secondary{background:#fff;border:1px solid #dfe1e5;color:#333}button.danger{background:#fff0ed;color:#c43920}button:disabled{opacity:.55;cursor:wait}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:23px 0}.card{background:#fff;border:1px solid #e9eaed;border-radius:16px;padding:17px;box-shadow:0 3px 14px #20242b08}.stat-label{font-size:12px;color:#7b7f87}.stat{font-size:25px;font-weight:850;margin-top:8px}.section{margin-top:24px}.section h2{font-size:16px;margin:0 0 12px}.table{background:#fff;border:1px solid #e9eaed;border-radius:15px;overflow:auto}.item{padding:14px 16px;border-bottom:1px solid #f0f1f3;display:flex;align-items:center;justify-content:space-between;gap:16px}.item:last-child{border-bottom:0}.muted{color:#7b7f87;font-size:12px;margin-top:4px}.pill{border-radius:999px;background:#fff0e8;color:#bd4a0c;padding:5px 9px;font-size:11px;font-weight:800;white-space:nowrap}.actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.actions button{padding:7px 10px;font-size:12px}.form{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr)) auto;gap:9px}.empty{padding:20px;color:#7b7f87;font-size:13px}.status{font-size:12px;color:#777}.status.ok{color:#17804a}.status.err{color:#c43920}.note{font-size:12px;line-height:1.5;color:#777;margin-top:14px}.toast{position:fixed;right:20px;bottom:20px;background:#242424;color:white;padding:12px 16px;border-radius:11px;box-shadow:0 7px 25px #0002;display:none;max-width:min(400px,calc(100vw - 40px));font-size:13px}.toast.show{display:block}@media(max-width:760px){.grid{grid-template-columns:1fr}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.wrap{margin-top:22px}.top{padding:15px 20px}}
+    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#242424;background:#f5f6f8;font-synthesis:none}*{box-sizing:border-box}body{margin:0}.top{background:#fff;border-bottom:1px solid #e8e9ec;padding:18px max(22px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:18px;font-weight:850;letter-spacing:-.5px}.brand b{color:#ff650a}.top small{display:block;color:#7b7f87;font-size:12px;margin-top:3px}.wrap{max-width:1120px;margin:30px auto;padding:0 22px}.row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.title{font-size:26px;margin:0 0 5px;letter-spacing:-.8px}.sub{color:#767b84;margin:0;font-size:13px}.controls{display:flex;gap:9px;align-items:center}select,input,button{font:inherit}select,input{background:#fff;border:1px solid #dfe1e5;border-radius:10px;padding:10px 12px;color:#242424}button{border:0;border-radius:10px;padding:10px 14px;background:#ff650a;color:#fff;font-weight:750;cursor:pointer}button.secondary{background:#fff;border:1px solid #dfe1e5;color:#333}button.danger{background:#fff0ed;color:#c43920}button:disabled{opacity:.55;cursor:wait}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:23px 0}.card{background:#fff;border:1px solid #e9eaed;border-radius:16px;padding:17px;box-shadow:0 3px 14px #20242b08}.stat-label{font-size:12px;color:#7b7f87}.stat{font-size:25px;font-weight:850;margin-top:8px}.section{margin-top:24px}.section h2{font-size:16px;margin:0 0 12px}.table{background:#fff;border:1px solid #e9eaed;border-radius:15px;overflow:auto}.item{padding:14px 16px;border-bottom:1px solid #f0f1f3;display:flex;align-items:center;justify-content:space-between;gap:16px}.item:last-child{border-bottom:0}.muted{color:#7b7f87;font-size:12px;margin-top:4px}.pill{border-radius:999px;background:#fff0e8;color:#bd4a0c;padding:5px 9px;font-size:11px;font-weight:800;white-space:nowrap}.actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.actions button{padding:7px 10px;font-size:12px}.form{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr)) auto;gap:9px}.stepper{display:flex;align-items:center;gap:4px;min-width:0}.stepper input{width:100%;min-width:0}.stepper button{width:38px;flex:0 0 38px;padding:10px 0}.stepper .minus{background:#fff;border:1px solid #dfe1e5;color:#333}.empty{padding:20px;color:#7b7f87;font-size:13px}.status{font-size:12px;color:#777}.status.ok{color:#17804a}.status.err{color:#c43920}.note{font-size:12px;line-height:1.5;color:#777;margin-top:14px}.toast{position:fixed;right:20px;bottom:20px;background:#242424;color:white;padding:12px 16px;border-radius:11px;box-shadow:0 7px 25px #0002;display:none;max-width:min(400px,calc(100vw - 40px));font-size:13px}.toast.show{display:block}@media(max-width:760px){.grid{grid-template-columns:1fr}.form{grid-template-columns:1fr 1fr}.form button{grid-column:1/-1}.wrap{margin-top:22px}.top{padding:15px 20px}}
   </style>
 </head>
 <body>
@@ -13,18 +13,18 @@
   <main class="wrap" style="display:none">
     <div class="row"><div><h1 class="title">Painel ao vivo</h1><p class="sub">As ações são enviadas para a mesma API usada pelo aplicativo.</p></div><div class="controls"><select id="device" aria-label="Secadora"></select><button class="secondary" id="refresh">Atualizar</button></div></div>
     <div class="grid"><div class="card"><div class="stat-label">Secadoras</div><div class="stat" id="deviceCount">—</div></div><div class="card"><div class="stat-label">Estado do ciclo selecionado</div><div class="stat" id="cycleStatus">—</div></div><div class="card"><div class="stat-label">Alertas ativos</div><div class="stat" id="alertCount">—</div></div></div>
-    <section class="section"><h2>Criar ciclo de teste</h2><div class="card"><form class="form" id="cycleForm"><input name="foodName" placeholder="Alimento (ex.: Maçãs)" required><input name="initialWeight" type="number" min="0.1" step="0.1" value="1" placeholder="Peso (kg)" required><input name="targetTemperature" type="number" min="35" max="80" value="55" placeholder="Temperatura (°C)" required><input name="minutes" type="number" min="1" value="60" placeholder="Duração (min)" required><button type="submit">Criar ciclo</button></form><p class="note">O ciclo criado no mock aparece automaticamente no app Flutter durante a próxima leitura.</p></div></section>
+    <section class="section"><h2 id="cycleFormTitle">Criar ciclo no mock</h2><div class="card"><form class="form" id="cycleForm"><input name="foodName" placeholder="Alimento (ex.: Maçãs)" required><div class="stepper"><button class="minus" type="button" data-step="-1" data-field="initialWeight" aria-label="Diminuir peso">-</button><input name="initialWeight" type="number" min="0.1" step="0.1" value="1" placeholder="Peso (kg)" required><button type="button" data-step="1" data-field="initialWeight" aria-label="Aumentar peso">+</button></div><div class="stepper"><button class="minus" type="button" data-step="-1" data-field="targetTemperature" aria-label="Diminuir temperatura">-</button><input name="targetTemperature" type="number" min="35" max="80" step="1" value="55" placeholder="Temperatura (°C)" required><button type="button" data-step="1" data-field="targetTemperature" aria-label="Aumentar temperatura">+</button></div><div class="stepper"><button class="minus" type="button" data-step="-1" data-field="minutes" aria-label="Diminuir duração">-</button><input name="minutes" type="number" min="1" max="1440" step="1" value="60" placeholder="Duração (min)" required><button type="button" data-step="1" data-field="minutes" aria-label="Aumentar duração">+</button></div><button id="cycleSubmit" type="submit">Criar ciclo</button><button id="cancelEdit" type="button" class="secondary" hidden>Cancelar edição</button></form><p class="note">O ciclo criado no mock aparece automaticamente no app Flutter durante a próxima leitura.</p></div></section>
     <section class="section"><h2>Ciclos</h2><div class="table" id="cycles"><div class="empty">Carregando ciclos…</div></div></section>
     <section class="section"><h2>Alertas ativos</h2><div class="table" id="alerts"><div class="empty">Carregando alertas…</div></div></section>
   </main><div class="toast" id="toast"></div>
   <script>
     const API=(new URLSearchParams(location.search).get('api')||'https://api-drytech.onrender.com/api').replace(/\/+$/,'');
     const $=selector=>document.querySelector(selector);
-    let token=sessionStorage.getItem('drytech_web_token')||'',busy=false;
+    let token=sessionStorage.getItem('drytech_admin_token')||'',busy=false,editingCycleId='',mockSnapshot=null,saveQueue=Promise.resolve();
 
     function showLogin(message=''){
       token='';
-      sessionStorage.removeItem('drytech_web_token');
+      sessionStorage.removeItem('drytech_admin_token');
       $('#loginCard').style.display='block';
       $('main').style.display='none';
       $('#loginError').textContent=message;
@@ -47,7 +47,7 @@
       const data=await request('/auth/login','POST',{username,password});
       if(!data.token) throw Error('A API não retornou um token administrativo.');
       token=data.token;
-      sessionStorage.setItem('drytech_web_token',token);
+      sessionStorage.setItem('drytech_admin_token',token);
       $('#loginCard').style.display='none';
       $('main').style.display='block';
       await refresh();
@@ -55,19 +55,42 @@
 
     function esc(value){return String(value??'—').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
 
+    function setCreateMode(){
+      editingCycleId='';
+      $('#cycleForm').reset();
+      $('#cycleFormTitle').textContent='Criar ciclo no mock';
+      $('#cycleSubmit').textContent='Criar ciclo';
+      $('#cancelEdit').hidden=true;
+    }
+
+    function beginEditCycle(){
+      const cycle=mockSnapshot?.cycle;
+      if(!cycle)return;
+      editingCycleId=String(cycle.id||'');
+      const form=$('#cycleForm');
+      form.elements.foodName.value=cycle.foodName||'Demonstração';
+      form.elements.initialWeight.value=cycle.initialWeight??1;
+      form.elements.targetTemperature.value=cycle.targetTemperature??cycle.maximumTemperature??55;
+      form.elements.minutes.value=Math.max(1,Math.ceil((cycle.plannedDurationSeconds??cycle.durationSeconds??3600)/60));
+      $('#cycleFormTitle').textContent='Editar ciclo mock';
+      $('#cycleSubmit').textContent='Salvar alterações';
+      $('#cancelEdit').hidden=false;
+      form.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+
     async function refresh(){
       if(busy)return;
       busy=true;
       $('#refresh').disabled=true;
       try{
         if(!token) throw Error('Entre com usuário e senha para acessar o painel.');
-        const data=await request('/mock/data');
-        const device=data.device;
-        const cycle=data.cycle;
+        mockSnapshot=await request('/mock/data');
+        const device=mockSnapshot.device;
+        const cycle=mockSnapshot.cycle;
         $('#device').innerHTML=device?`<option value="${esc(device.id)}">${esc(device.name)}</option>`:'';
         $('#deviceCount').textContent=device?'1':'0';
         $('#cycleStatus').textContent=cycle?.status||'Ocioso';
-        const alerts=Array.isArray(data.activeAlerts)?data.activeAlerts:[];
+        const alerts=Array.isArray(mockSnapshot.activeAlerts)?mockSnapshot.activeAlerts:[];
         $('#alertCount').textContent=alerts.length;
         renderCycles(cycle?[{...cycle,foodName:cycle.foodName||'Demonstração',targetTemperature:cycle.targetTemperature??cycle.maximumTemperature}]:[]);
         renderAlerts(alerts);
@@ -84,7 +107,7 @@
 
     function renderCycles(list){
       if(!list.length){$('#cycles').innerHTML='<div class="empty">Nenhum ciclo no mock. Crie um ciclo para sincronizá-lo com o app.</div>';return}
-      $('#cycles').innerHTML=list.map(c=>`<div class="item"><div><strong>${esc(c.foodName)}</strong><div class="muted">${esc(c.status)} · ${esc(c.initialWeight??'—')} kg · ${esc(c.targetTemperature??'—')} °C · ${Math.round((c.plannedDurationSeconds??c.durationSeconds??0)/60)} min</div></div><span class="pill">${esc(c.id)}</span></div>`).join('');
+      $('#cycles').innerHTML=list.map(c=>`<div class="item"><div><strong>${esc(c.foodName)}</strong><div class="muted">${esc(c.status)} · ${esc(c.initialWeight??'—')} kg · ${esc(c.targetTemperature??'—')} °C · ${Math.round((c.plannedDurationSeconds??c.durationSeconds??0)/60)} min</div></div><div class="actions"><span class="pill">${esc(c.id)}</span><button class="secondary" type="button" data-edit-cycle>Editar</button></div></div>`).join('');
     }
 
     function renderAlerts(list){
@@ -94,22 +117,66 @@
 
     $('#device').addEventListener('change',()=>{});
     $('#refresh').addEventListener('click',refresh);
-    $('#cycleForm').addEventListener('submit',async event=>{
+    $('#cycles').addEventListener('click',event=>{if(event.target.closest('[data-edit-cycle]'))beginEditCycle()});
+    $('#cancelEdit').addEventListener('click',setCreateMode);
+    function patchForField(field,value){
+      if(field==='foodName')return {foodName:String(value).trim()};
+      if(field==='initialWeight')return {initialWeight:Number(value)};
+      if(field==='targetTemperature')return {targetTemperature:Number(value)};
+      if(field==='minutes')return {plannedDurationSeconds:Number(value)*60};
+      return null;
+    }
+
+    function autoUpdateField(field,value){
+      if(!editingCycleId)return;
+      const input=$('#cycleForm').elements[field];
+      if(!input||!input.checkValidity())return;
+      const patch=patchForField(field,value);
+      if(!patch)return;
+      $('#connection').textContent='Salvando alteração no mock…';
+      saveQueue=saveQueue.catch(()=>{}).then(async()=>{
+        await request('/mock/cycle','PATCH',patch);
+        await refresh();
+        $('#connection').textContent='Alteração aplicada · app atualiza em até 3 s';
+        $('#connection').className='status ok';
+      }).catch(error=>{
+        $('#connection').textContent='Erro: '+error.message;
+        $('#connection').className='status err';
+      });
+    }
+    $('#cycleForm').addEventListener('click',event=>{
+      const button=event.target.closest('[data-step]');
+      if(!button)return;
+      const input=$('#cycleForm').elements[button.dataset.field];
+      const step=Number(input.step||1);
+      const delta=Number(button.dataset.step)*step;
+      const min=Number(input.min||0);
+      const max=Number(input.max||Number.MAX_SAFE_INTEGER);
+      const decimals=String(step).includes('.')?String(step).split('.')[1].length:0;
+      input.value=Math.min(max,Math.max(min,Number(input.value||min)+delta)).toFixed(decimals);
+      input.dispatchEvent(new Event('change',{bubbles:true}));
+    });
+    $('#cycleForm').addEventListener('change',event=>{
+      if(event.target.matches('input[name="foodName"],input[name="initialWeight"],input[name="targetTemperature"],input[name="minutes"]'))autoUpdateField(event.target.name,event.target.value);
+    });    $('#cycleForm').addEventListener('submit',async event=>{
       event.preventDefault();
       const form=event.currentTarget;
-      const submit=form.querySelector('button[type="submit"]');
+      const submit=$('#cycleSubmit');
       const values=new FormData(form);
+      const wasEditing=Boolean(editingCycleId);
       submit.disabled=true;
       try{
-        await request('/mock/cycle','POST',{
+        const payload={
           foodName:String(values.get('foodName')).trim(),
           initialWeight:Number(values.get('initialWeight')),
           targetTemperature:Number(values.get('targetTemperature')),
           plannedDurationSeconds:Number(values.get('minutes'))*60
-        });
-        form.reset();
+        };
+        if(wasEditing)await saveQueue;
+        await request('/mock/cycle',wasEditing?'PATCH':'POST',payload);
+        setCreateMode();
         await refresh();
-        $('#connection').textContent='Ciclo criado no mock e sincronizado com o app';
+        $('#connection').textContent=wasEditing?'Ciclo atualizado e sincronizado com o app':'Ciclo criado no mock e sincronizado com o app';
         $('#connection').className='status ok';
       }catch(error){
         $('#connection').textContent='Erro: '+error.message;
